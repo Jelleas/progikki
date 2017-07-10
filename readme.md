@@ -61,7 +61,7 @@ Python, kennis van C overdragen naar Python
 Modules, random, plotten
 
 ## Dag 1-5 (Simuleren)
-* [Monopoly opdracht](https://inleiding.mprog.nl/monopoly/inhoud) ?
+* [Monopoly opdracht](https://inleiding.mprog.nl/monopoly/inhoud) -> WIP @ https://github.com/jelleas/monopoly
 * [Virus opdracht](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00-introduction-to-computer-science-and-programming-fall-2008/assignments/pset12.pdf) ? (dan zonder OO)
 
 
