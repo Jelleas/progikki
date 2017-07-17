@@ -73,7 +73,7 @@ te kunnen volgen. Maak dan gebruik van de `sleep()` functie van de module `time`
 
 Bovenstaande zorgt ervoor dat je een seconde de tijd krijgt voordat jouw programma weer doorraast :-)
 
-## Opdracht 1: Trump mode: 1 speler met oneindig veel geld
+## Opdracht 1: Trump mode
 
 We gaan een groot aantal potjes Monopoly simuleren waarin we 1 speler rond laten lopen en hem 
 straten laten kopen. We spelen in de zogenaamde Trump-Mode. De speler heeft oneindig veel geld, 
@@ -103,7 +103,7 @@ en de waarde van het vakje waar de pion op staat. Zoiets:
 	Na worp 1: velperplein, 120
 	Na worp 2: neude, 180
 	...
-	Na worp 7: Dorpsstraat, 60
+	Na worp 7: dorpsstraat, 60
 
 
 ### Tussenstap 3: Bezit
@@ -120,79 +120,15 @@ dictionary genaamd `bezit`, met alle vakjesnamen met een waarde hoger dan 0 als 
 
 
 ### Tussenstap 4: Trump
+We hebben nu een bord, een pion, dobbelstenen, en een manier om bezit bij te houden. Tijd om voor Trump te gaan spelen.
+Onze vraag is, hoe vaak moet je dobbelen voordat je alles in bezit hebt? Je kan enkel een vakje kopen als je erop staat!
+
+Zorg dat je dit niet één keer simuleert, maar een gezond aantal keer, zeg 1000, 10000 keer? Mag best een paar seconden
+duren, maar niet te lang (`checkpy` kapt je af na 10 seconden)!
+
+Als output moet je programma het aantal keren dobbelen dat gemiddeld nodig was printen in de eerste regel van de output.
 
 
+## Testen
 
-### Tussenstap 4: Enkel potje: rondlopen op het 'echte' bord (met kopen)
-
-We gaan nu de functie `simuleer_potje_Monopoly()` uitbreiden zodat we ook straten kunnen kopen en daarbij 
-bijhouden welke straten er wel/niet zijn verkocht. We beginnen daarmee door in de zogenaamde Donald Trump 
-mode over het bord te stappen: we kunnen alles kopen, zijn de enige speler in het spel en we wandelen net 
-zo lang door tot we alles in ons bezit hebben. De vraag die we in deze opdracht willen beantwoorden is de 
-volgende: "hoe lang (hoeveel worpen) duurt het voor we alle straten in ons bezit hebben?".
-
-Het is hierbij cruciaal dat we bijhouden hoeveel straten (en welke) we al in ons bezit hebben. Dit kunnen we 
-doen met behulp van een lijst (weer lengte 40) waarbij je voor elke plek op het bord bijhoudt of hij in het 
-bezit is van de speler. Of niet. Die lijst begint als een lijst met 40 nullen. 
-
-{: .language-python}
-    bezittingen = [0,0,0,0,.....,0,0]
-
-Elke keer als je op een nieuwe positie komt kan je nu nagaan:
-
-  - is er op die positie iets te koop: straat, station, water/electriciteit ?
-  - zo ja, is het nog 'op de markt'?
-   
-Als je bijvoorbeeld na worp 1 op plek 3 komt en whitechapel road (of Brink in de Nederlandse versie) koopt 
-kan je je lijst met bezittingen updaten. Gelijk erna ziet hij er dan zo uit:
-
-{: .language-python}
-    bezittingen = [0,0,1,0,.....,0,0]
-
-Als er op de positie niks te koop is of als je de straat al in je bezit hebt dan gooien we gewoon 
-opnieuw en wandelen we verder. Zorg dat je na elke worp waarbij je op een veld komt dat nog te koop 
-is het op het scherm geprint wordt en ook gelijk hoeveel velden je in totaal in je bezit hebt na die 
-aankoop.
-
-{: .language-python}
-	Na worp 1: positie  3 (straat).
-	           speler 1 heeft 1 huis in zijn/haar bezit. Er staan nu nog 27 velden te koop.
-
-Omdat je weet hoeveel straten er in totaal te koop zijn in het spel weet je nu ook wanneer je alle 
-straten in je bezit hebt. Stop met gooien als dat gebeurt en print op het scherm hoeveel beurten je 
-nodig had:
-
-{: .language-python}
-    Monopoly is afgelopen: na worp XXX had de speler alle straten in zijn bezit
-
-### Tussenstap 5: Meerdere potjes: gemiddeld aantal worpen tot einde spel
-
-We hebben met de functie `simuleer_potje_Monopoly()` die we in tussenstap 1-4 gemaakt hebben nu 
-de mogelijkheid om een enkel potje Monopoly te simuleren. Als je dit een paar keer doet zul je 
-zien dat het aantal worpen dat je nodig hebt om alle straten in je bezit te krijgen sterk varieert 
-omdat je aan het eind van het spel natuurlijk maar net op dat laatste overgebleven vakje terecht 
-moet komen. Het doel van deze opdracht was om uit te zoeken hoeveel worpen de speler *gemiddeld* 
-nodig zou hebben om alle velden in zijn bezit te krijgen. Om deze vraag te beantwoorden zullen we 
-een groot aantal potjes moeten simuleren zodat we daarvan het gemiddeld aantal worpen kunnen bepalen.
-
-Schrijf een functie `simuleer_groot_aantal_potjes_Monopoly()` die, de naam zegt het al, een groot aantal potjes 
-kan simuleren door steeds de functie `simuleer_potje_Monopoly()` aan te roepen. Pas ook de functie 
-`simuleer_potje_Monopoly()` zo aan dat hij als return value het aantal worpen van het potje teruggeeft. Begin 
-met 1 potje en voer dat dan op naar 2, 10 en uiteindelijk naar 10000 als je er zeker van bent dat je programma 
-goed werkt. Hou voor elk potje bij (in een lijst) hoeveel worpen er nodig waren om alle straten in bezit te 
-krijgen en maak daarvan een grafiek (histogram) als alle potjes gesimuleerd zijn. Bepaal op dat moment ook het 
-gemiddeld aantal worpen dat nodig was om alle straten in je bezit te krijgen en print het op het scherm in het 
-format dat aan het begin van de opgave gespecificeerd was:
-
-{: .language-python}
-	Monopoly simulator: 1 speler, Trump mode 
-    We hebben 10000 potjes gesimuleerd
-    Gemiddeld duurde het XXX worpen voor de speler alle straten in zijn bezit had
-
-Tip: als je een groot aantal potjes simuleert is het handig als het programma laat zien waar 
-hij mee bezig is. Als er niks te zien is op het scherm vraagt de gebruiker zich anders af: 
-"moet ik nog 1 minuut wachten of nog 1001 uur ? Een manier om dat op te lossen is bijvoorbeeld 
-door elke 500 potjes even naar het scherm te printen dat je nu Monopoly-potje X van in totaal 
-Y potjes aan het simuleren bent.
- 
-<br>
+	checkpy monopoly
