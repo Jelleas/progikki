@@ -85,8 +85,8 @@ zijn verkocht. Hier gaan we in stappen naar toe werken.
 ### Tussenstap 1: Dobbelstenen
 
 Maak een nieuw bestand aan genaamd
-`monopolySimulatie.py`. Zorg dat de gedownloade bestanden in dezelfde map staan. 
-Schrijf een functie `dobbelstenenWorp()` binnen `monopolySimulatie.py`. De functie
+`monopolyTrump.py`. Zorg dat de gedownloade bestanden in dezelfde map staan. 
+Schrijf een functie `dobbelstenenWorp()` binnen `monopolyTrump.py`. De functie
 moet geen argumenten accepteren, en de uitkomst van de dobbelstenen worp als integer
 returnen. Let op, binnen Monopoly heb je als speler twee dobbelstenen! Zo heb je de meeste
 kans om 7 te gooien, en kun je 1 helemaal niet gooien. Om deze functie te implementeren kun je
@@ -115,8 +115,9 @@ als value kunnen koppelen of ze al gekocht zijn of niet (een boolean). Als we da
 kan kopen in de dictionary stoppen, kunnen we straks heel makkelijk controlleren hoeveel er al is gekocht!
 
 Om te beginnen hebben we een dictionary nodig, en moeten we deze vullen met alle namen van vakjes welke je kan kopen.
-Dit zijn de vakjes met een waarde (anders gezegd, alle vakjes met een waarde hoger dan 0). Dit is jouw taak: maak een
-dictionary genaamd `bezit`, met alle vakjesnamen met een waarde hoger dan 0 als keys, en alle values met waarde `False`.
+Dit zijn de vakjes met een waarde (anders gezegd, alle vakjes met een waarde hoger dan 0). Dit is jouw taak: schrijf een
+functie genaamd: `bezit(board)`. Deze functie accepteert als argument een `Board`, en returned een
+dictionary, met alle vakjesnamen met een waarde hoger dan 0 als keys, en alle values met waarde `False`.
 
 
 ### Tussenstap 4: Trump
@@ -128,7 +129,12 @@ duren, maar niet te lang (`checkpy` kapt je af na 10 seconden)!
 
 Als output moet je programma het aantal keren dobbelen dat gemiddeld nodig was printen in de eerste regel van de output.
 
+Zet jouw code van tussenstap 4 binnen `if __name__ == "__main__":`, dit zorgt er voor dat jouw code enkel wordt uitgevoerd als `__name__`
+gelijkt is aan de string `"__main__"`. Huh? Python heeft een aantal verborgen variabelen en functies, deze beginnen en 
+eindigen allemaal met `__`. Eén daarvan is `__name__` dat is een naam die Python aan de module toekent. Run je de module
+direct, dan is die naam `"__main__" (denk ook terug aan C!). Ofwel `if __name__ == "__main__":` zegt letterlijk, voer de 
+code hieronder enkel uit, als je deze module direct runt, en niet als je deze importeert.
 
 ## Testen
 
-	checkpy monopoly
+	checkpy monopolyTrump

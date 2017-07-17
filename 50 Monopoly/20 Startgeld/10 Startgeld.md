@@ -1,26 +1,24 @@
-## Opdracht 2: Realisme toevoegen: effect van startgeld
+## Opdracht 2: Startgeld
 
 ![](GoldenDollar.png){:.inline}{: style="width:20%"}
 
-In een officieel potje Monopoly krijg je 1500 euro startgeld en verdient je 200 euro elke   
-keer dat je START passeert. Zo'n eindige hoeveelheid startgeld heeft invloed op de snelheid 
+In een normaal potje Monopoly krijg je 1500 euro startgeld en verdien je 200 euro elke   
+keer dat je start passeert. Zo'n eindige hoeveelheid startgeld heeft invloed op de snelheid 
 waarmee je nieuwe straten kan kopen. In deze opdracht zoeken we uit welk effect dit precies 
-heeft. 
+heeft.
 
-Let op: we gaan nu een aanpassing aan de bestaande code maken uit opdracht 1. Om te zorgen dat 
-de code uit opdracht 1 bewaard blijft gaan we deze opdracht maken in een nieuw bestand. Maak 
-dus een nieuw Python bestand aan, `Monopoly_opdracht2.py`, kopieer de code die je tot nu toe 
-hebt gemaakt en ga verder in deze nieuwe file.
+Maak een nieuw bestand aan genaamd monopolyStartgeld.py binnen dezelfde map als de vorige opdracht.
+Simuleer nu Monopoly spellen met een variabele hoeveelheid startgeld in stappen van 500 euro, startend bij 0 euro, oplopend t/m 2500 (inclusief!).
+Elke keer dat de pion start passeert krijgt de speler 200 euro extra. 
+Maak een grafiek met op de x-as de verschillende hoeveelheden startgeld, en op de y-as het aantal worpen totdat alles is opgekocht.
 
-Pas in je nieuwe programma de functie `simuleer_potje_Monopoly()` zo aan dat je elk potje 
-begint met een bepaalde hoeveelheid startgeld en dat je gedurende het spel bijhoudt hoeveel 
-geld je op elk moment hebt. Evalueer nu ook elke keer dat je op een veld terechtkomt die nog 
-te koop staat of je wel genoeg geld heeft om het te kopen. De verwachting is dat je in een 
-potje nu gemiddeld iets meer worpen nodig hebt om alle straten te kopen dan in opdracht 1 
-waarin geld geen rol speelde.
+Om te voorkomen dat je code moet kopieren, kun je gebruik maken van `if __name__ == "__main__"` in monopolyTrump.py. Zo kun je 
+code importeren, zonder dat er code wordt uitgevoerd.
+
+
 
 Begin met 3000 euro startgeld en verlaag dat steeds met 500 euro: 2500, 2000, 1500, 1000, 500 
-tot 0 euro. Simuleer voor elke keuze van het startgeld 25000 potjes om zo nauwkeurig mogelijk 
+tot 0 euro. Simuleer voor elke keuze van het startgeld 10000 potjes om zo nauwkeurig mogelijk 
 het gemiddeld aantal worpen te bepalen dat nodig is om alle straten te kopen en maak uiteindelijk 
 een grafiek van het gemiddeld aantal worpen als functie van de hoeveelheid startgeld. 
 
@@ -36,7 +34,7 @@ Gebruik het verschil tussen het gemiddeld aantal worpen met 1000 euro of 2000 eu
 om een idee te krijgen wat het effect is (aantal worpen dat het spel er korter/langer over 
 doet) voor elke 100 euro meer of minder stargeld.
 
-Een paar tipos bij deze opdracht:
+Een paar tips bij deze opdracht:
 
    1. Je mag de hoeveelheid startgeld in deze opdracht steeds met de hand aanpassen.
 
