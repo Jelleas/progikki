@@ -105,30 +105,24 @@ en de waarde van het vakje waar de pion op staat. Zoiets:
 	...
 	Na worp 7: Dorpsstraat, 60
 
-### Tussenstap 3: Enkel potje: rondlopen op het 'echte' bord (zonder te kopen)
 
-Niet elke positie op het bord correspondeert met een bezitting (straat, station of water/electriciteit). De 
-hoekpunten van het bord zijn niet te koop en ook de Kans en Algemeen fonds kaarten en de belastingen 
-zijn niet te koop. Maak een lijst (lengte 40 waarbij je voor elke positie op het bord laat zien welke 
-waarde aan de plek op het bord verbonden is. De eerste 11 posities zijn dan:
+### Tussenstap 3: Bezit
 
-{: .language-python}
-    bord_waardes = [0, 60, 0, 60, 0, 200, 100, 0, 100, 100, 0, ......]
+Rondlopen is één ding, maar we willen straks ook straten, stations en nutsbedrijven kunnen kopen. We hebben dus iets 
+nodig om bezit te onthouden. Simpelweg een lijst zou hiervoor onhandig zijn, want sommige vakjes kun je niet kopen.
+Hier kunnen we handig een dictionary gebruiken. Waar we de namen van de vakjes kunnen gebruiken als keys, en daaraan
+als value kunnen koppelen of ze al gekocht zijn of niet (een boolean). Als we dan enkel de namen van de vakjes die je
+kan kopen in de dictionary stoppen, kunnen we straks heel makkelijk controlleren hoeveel er al is gekocht!
 
-Zoek op internet op hoe het Monopoly bord verder in elkaar zit zodat je niet alleen van de eerste 11, 
-maar van alle 40 velden weet voor welk geldbedrag ze te koop zijn. Als de waarde kleiner is dan 1 euro 
-(of gewoon gelijk aan nul) dan is dat een zogenaamd leeg veld (niet te koop).
+Om te beginnen hebben we een dictionary nodig, en moeten we deze vullen met alle namen van vakjes welke je kan kopen.
+Dit zijn de vakjes met een waarde (anders gezegd, alle vakjes met een waarde hoger dan 0). Dit is jouw taak: maak een
+dictionary genaamd `bezit`, met alle vakjesnamen met een waarde hoger dan 0 als keys, en alle values met waarde `False`.
 
-Voor elke positie op het bord kan je dan het volgende uitprinten:
 
-{: .language-python}
-	Na worp 1: positie  6 (straat)
-	Na worp 2: positie  9 (straat)
-	Na worp 3: positie 17 (leeg)
-	Na worp 4: ...
-	
-Implementeer dit in je programma.
-	
+### Tussenstap 4: Trump
+
+
+
 ### Tussenstap 4: Enkel potje: rondlopen op het 'echte' bord (met kopen)
 
 We gaan nu de functie `simuleer_potje_Monopoly()` uitbreiden zodat we ook straten kunnen kopen en daarbij 
