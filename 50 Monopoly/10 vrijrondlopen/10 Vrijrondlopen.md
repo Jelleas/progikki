@@ -79,59 +79,17 @@ We gaan een groot aantal potjes Monopoly simuleren waarin we 1 speler rond laten
 straten laten kopen. We spelen in de zogenaamde Trump-Mode. De speler heeft oneindig veel geld, 
 en er is geen concurrentie. We houden het spel simpel, er zijn geen huizen of hotels, alleen ongekochte of gekochte straten, stations en nutsbedrijven.
 Kanskaarten negeren we even, en niemand gaat direct naar de gevangenis. 
-
-
-
-
-
-
 Doel van deze opdracht is om te bepalen wat het gemiddeld aantal worpen is waarna alle straten 
-zijn verkocht. Schrijf in een bestand `Monopoly_opdracht1.py` een functie 
-`simuleer_groot_aantal_potjes_Monopoly(Npotjes)`. De variabele `Npotjes` geeft aan hoeveel potjes er 
-gesimuleerd moeten worden. In ons geval 10000. Wanneer de functie wordt aangeroepen met 10000 
-potjes moet het volgende worden uitprint: 
+zijn verkocht. Hier gaan we in stappen naar toewerken. 
 
-{: .language-python}
-	Monopoly simulator: 1 speler, Trump mode 
-    We hebben 10000 potjes gesimuleerd
-    Gemiddeld duurde het XXX worpen voor de speler alle straten in zijn bezit had
-	
-Om je te helpen deze opdracht te maken is het handig de volgende tussenstappen te doorlopen. 
+Maak een nieuw bestand aan genaamd
+`monopolySimulatie.py`. Zorg dat de gedownloade bestanden in dezelfde map staan. 
+Schrijf een functie `dobbelstenenWorp()` binnen `monopolySimulatie.py`. De functie
+moet geen argumenten accepteren, en de uitkomst van de dobbelstenen worp als integer
+returnen. Let op, binnen Monopoly heb je als speler twee dobbelstenen! Zo heb je de meeste
+kans om 7 te gooien, en kun je 1 helemaal niet gooien. Om deze functie te implemteren kun je
+gebruik maken van de functie `randint()` van de `random` module. Google maar!
 
-### Tussenstap 1: dobbelsteen in Python - random integers
-
-Het enige nieuwe Python element dat we nodig hebben is een manier om een dobbelsteen te 
-gooien. Een random geheel getal tussen de 1 en de 6 dus. Dat zouden we zelf kunnen 
-'bouwen' met behulp van de `random()` functie die we eerder hebben leren kennen, maar er 
-is een speciale functie voor in Python, namelijk `randint()`.
-
-{: .language-python}
-	import random
-	dobbelsteen = random.randint(1,6) 
-	
-ter volledigheid: met Monopoly gooi je elke beurt met twee dobbelstenen.
-
-Hoewel het niet essentieel is voor de opgave is het goed om even te oefenen met het 
-gooien van de dobbelstenen. Schrijf een korte functie `oefenen_met_de_dobbelstenen()` die 
-duizend worpen simuleert en voor elke worp steeds twee dobbelstenen gooit. Zorg dat op het 
-scherm voor elke worp het aantal ogen geprint wordt en maak duidelijk aan de gebruiker als 
-er een zogenaamde 'dubbel' gegooid wordt (het aantal ogen op beide dobbelstenen is gelijk).
-Houd het aantal 'dubbelen' bij en print dat aan het eind van het programma op het scherm.
-
-{: .language-python}
-	worp 1: totaal van 2 dobbelstenen =  5
-	worp 2: totaal van 2 dobbelstenen =  9
-	worp 3: totaal van 2 dobbelstenen = 10
-	        Yes, we hebben een dubbele: 5+5
-	worp 4: ...
-	worp 5: ...
-	..
-	worp 1000: totaal van 2 dobbelstenen = 3
-
-    print "Het percentage dubbele worpen = xx,xx procent"	
-
-Let op: de functie `oefenen_met_de_dobbelstenen()` heb je in de rest van de opgave niet meer 
-nodig. Je kan hem in je programma laten staan, uitcommentarieren of gewoon helemaal weghalen.
 
 ### Tussenstap 2: Enkel potje: rondlopen op leeg bord
 
