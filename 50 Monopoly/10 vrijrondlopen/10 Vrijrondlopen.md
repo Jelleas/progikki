@@ -71,7 +71,7 @@ te kunnen volgen. Maak dan gebruik van de `sleep()` functie van de module `time`
 	monopoly.draw(board, piece)
 	time.sleep(1)
 
-Bovenstaande zorgt ervoor dat je een seconde de tijd krijgt voordat je programma weer doorraast :-)
+Bovenstaande zorgt ervoor dat je een seconde de tijd krijgt voordat jouw programma weer doorraast :-)
 
 ## Opdracht 1: Trump mode: 1 speler met oneindig veel geld
 
@@ -80,35 +80,30 @@ straten laten kopen. We spelen in de zogenaamde Trump-Mode. De speler heeft onei
 en er is geen concurrentie. We houden het spel simpel, er zijn geen huizen of hotels, alleen ongekochte of gekochte straten, stations en nutsbedrijven.
 Kanskaarten negeren we even, en niemand gaat direct naar de gevangenis. 
 Doel van deze opdracht is om te bepalen wat het gemiddeld aantal worpen is waarna alle straten 
-zijn verkocht. Hier gaan we in stappen naar toewerken. 
+zijn verkocht. Hier gaan we in stappen naar toe werken. 
+
+### Tussenstap 1: Dobbelstenen
 
 Maak een nieuw bestand aan genaamd
 `monopolySimulatie.py`. Zorg dat de gedownloade bestanden in dezelfde map staan. 
 Schrijf een functie `dobbelstenenWorp()` binnen `monopolySimulatie.py`. De functie
 moet geen argumenten accepteren, en de uitkomst van de dobbelstenen worp als integer
 returnen. Let op, binnen Monopoly heb je als speler twee dobbelstenen! Zo heb je de meeste
-kans om 7 te gooien, en kun je 1 helemaal niet gooien. Om deze functie te implemteren kun je
+kans om 7 te gooien, en kun je 1 helemaal niet gooien. Om deze functie te implementeren kun je
 gebruik maken van de functie `randint()` van de `random` module. Google maar!
 
 
-### Tussenstap 2: Enkel potje: rondlopen op leeg bord
+### Tussenstap 2: Rondlopen
 
-We beginnen nu onze simulatie door een nieuwe functie te definieren: `simuleer_potje_Monopoly()`
-Deze functie zullen we langzaam uitbreiden tot we in tussenstap 4 een 'echt' potje Monopoly zullen 
-simuleren. We beginnen simpel door eerst een rondje te lopen met 1 speler op een Monopolybord en 
-steeds te kijken op welke positie de speler zich bevindt.
+Nu we dobbelstenen hebben kunnen we rondlopen op het bord. Om het aan jezelf te bewijzen, loop een rondje, 
+en stop zodra je weer voorbij start bent (positie 0). Print na elke zet (dobbelstenen worp) het naam van het vakje
+en de waarde van het vakje waar de pion op staat. Zoiets:
 
-Gooi steeds met twee dobbelstenen en hou bij op welk veld de speler staat. Print dat op het scherm. 
-Hierbij is start positie 0, de gevangenis positie 10 en de Kalverstraat positie 39. 
-
-{: .language-python}
-	Na worp 1: positie 6
-	Na worp 2: positie 9
-	Na worp 3: positie 17
-    Na worp 4: ...
-
-Let op: zorg dat je positie altijd tussen de 0 en de 39 zit, ook al heb je meerdere rondjes gemaakt. 
-Je zou hiervoor bijvoorbeeld de modulo (`%`) operator kunnen gebruiken die je kent uit module 1.
+	Na worp 0: brink, 60
+	Na worp 1: velperplein, 120
+	Na worp 2: neude, 180
+	...
+	Na worp 7: Dorpsstraat, 60
 
 ### Tussenstap 3: Enkel potje: rondlopen op het 'echte' bord (zonder te kopen)
 
