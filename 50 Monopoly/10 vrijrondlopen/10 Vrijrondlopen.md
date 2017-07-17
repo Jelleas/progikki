@@ -15,33 +15,76 @@ kan je zelfs de settings vinden waarin je dingen kan optimaliseren: dat kan het
 maximaliseren van je winstkansen zijn, maar ook het minimaliseren van de kans dat 
 je failliet gaat. Of een mix van die scenario's.
 
-In deze module gaan we een simpel voorbeeld doorrekenen: Monopoly met twee spelers, 
+In deze module gaan we een voorbeeld doorrekenen: Monopoly met twee spelers, 
 waarbij we stap voor stap meer complexiteit toevoegen. Voor degene die de smaak te 
 pakken heeft en nu al droomt van een baan op de Risk-Analysis divisie van JP Morgan 
 hebben we nog wat suggesties voor extra opgaves gemaakt.
 
-Twee dingen om alvast te weten voor je aan deze opdracht begint:
+## Getting started
 
-   1. Om goed te zien of je code werkt zul je vaak dingen printen. Erg handig, want het 
-      stelt je in staat te kijken of in elke nieuwe stap die je implementeert de 'logica' 
-	  van je programma inderdaad zo werkt zoals jij het voor ogen had. Zodra je er eenmaal 
-	  van overtuigd bent dat een bepaalde stap werkt kan je het print-statement weghalen 
-	  (uitcommentarieren). Het printen kost veel tijd en is erg onoverzichtelijk voor 
-	  uitgebreide simulaties.
-   2. Deze module werkt toe naar een redelijk complexe simulatie van Monopoly. Om te zorgen 
-      dat je zelf de code goed begrijpt is het belangrijk om eenvoudig te beginnen en steeds
-	  een nieuwe component of laag van complexiteit toe te voegen aan het programma. Om 
-	  de werkende code van elke opdracht te bewaren zullen we je bij elke nieuwe opdracht 
-	  vragen het oude bestand te saven en in een nieuw bestand verder te gaan. De nieuwe 
-	  opdracht, in een eigen bestand, is vaak een uitbreiding van de bestaande code tot dan toe.
-	     
+Bij deze opdracht leveren we wat code mee, zodat jij niet al het werk hoeft te doen. De code kun je [hier downloaden](https://github.com/Jelleas/monopoly/archive/master.zip).
+Let er even op, het is een .zip bestand. Deze moet je dus uitpakken in de map waarin je wilt gaan werken. 
+
+Zodra je dat hebt gedaan zie je drie python bestanden: `monopoly.py`, `monopolyData.py`, en `monopolyVisualisation.py`. De code binnen deze files hoef je niet te begrijpen.
+Toch even voor een snelle uitleg, monopolyVisualisation is een Python module die de visualisatie verzorgt, en monopolyData een module die de data levert voor de
+waardes en namen van de vakjes op het bord. `monopoly.py` geeft jou de mogelijkheid om een pion over het bord te laten lopen.
+
+Zullen we het even testen? Doe maar eens:
+
+	python monopoly.py
+
+Als alles goed is, zie je een pionnetje over het Monopolybord bewegen. Dit is wat we jou meegeven, een representatie voor een bord, een representatie voor een pion, en de 
+mogelijkheid een pion over het bord te laten bewegen. Ook kun je dit visualiseren, zo kan jij zometeen makkelijk nagaan of jouw simulatie wel klopt.
+
+Hoe werkt dit alles? In monopoly.py geven we je twee nieuwe classes. Dat zijn `Board`, en `Piece`. Dit zijn zelfgemaakte (door ons) types waarmee jij zometeen kan werken.
+Je kan een `Board` aanmaken met de volgende regel code:
+
+	import monopoly
+	board = monopoly.Board()
+
+En een `Piece` als volgt:
+
+	piece = monopoly.Piece()
+
+Let wel, dat wat voor het `=` teken staat is ook maar een naam, dat kan natuurlijk ook anders heten! We moeten als we in een ander bestand dan monopoly.py gaan
+programmeren eerst `monopoly` importeren d.m.v. `import monopoly`. In Python zijn losse bestanden zogenaamde modules, welke je d.m.v. `import` kan importeren.
+Door de bovenstaande code hebben we een `Board` en een `Piece`. Een `Board` heeft twee attributen: `names`, en `values`. Dit zijn lijsten van 40 lang, met alle
+namen en waardes op de vakjes van het bord. Zo is `board.names[0]` de string `"start"`, met bijbehorende waarde `board.values[0]` van 0. Een `Piece` heeft één
+attribuut: `location`. `location` is een integer die de plek op het bord aangeeft, alle `Piece`s beginnen op location 0. Ook heeft `Piece` een methode, een functie
+behorende bij een class, namelijk `move(distance)`. Je kan een `Piece` dus laten bewegen d.m.v. de methode `move(distance)`, bijvoorbeeld `piece.move(7)` beweegt
+de pion 7 vakjes. Door het gebruik van deze methode verandert de waarde van het attribuut location ook. 
+
+Met de combinatie van een `Board` en een `Piece` kunnen we het spel simuleren. Je kan namelijk de waarde opvragen van het vakje waar de `Piece` op staat d.m.v.
+`board.values[piece.location]` en de naam d.m.v. `board.names[piece.location]`. Wil je de stand van het bord zien? Gebruik dan de `draw` functie van `monopoly.py`.
+Deze kun je gebruiken als volgt:
+
+	monopoly.draw(board, piece)
+
+Mocht je meerdere `Piece`s hebben, dan kun je dit doen:
+
+	monopoly.draw(board, piece1, piece2, piece3)
+
+Wellicht wil je `draw` meerdere keren gebruiken om een animatie te maken, je zal dan waarschijnlijk merken dat je computer iets te snel is om het pionnetje nog 
+te kunnen volgen. Maak dan gebruik van de `sleep()` functie van de module `time`. Bijvoorbeeld als volgt:
+
+	import time
+	monopoly.draw(board, piece)
+	time.sleep(1)
+
+Bovenstaande zorgt ervoor dat je een seconde de tijd krijgt voordat je programma weer doorraast :-)
 
 ## Opdracht 1: Trump mode: 1 speler met oneindig veel geld
 
 We gaan een groot aantal potjes Monopoly simuleren waarin we 1 speler rond laten lopen en hem 
 straten laten kopen. We spelen in de zogenaamde Trump-Mode. De speler heeft oneindig veel geld, 
-er is geen concurrentie.
-		
+en er is geen concurrentie. We houden het spel simpel, er zijn geen huizen of hotels, alleen ongekochte of gekochte straten, stations en nutsbedrijven.
+Kanskaarten negeren we even, en niemand gaat direct naar de gevangenis. 
+
+
+
+
+
+
 Doel van deze opdracht is om te bepalen wat het gemiddeld aantal worpen is waarna alle straten 
 zijn verkocht. Schrijf in een bestand `Monopoly_opdracht1.py` een functie 
 `simuleer_groot_aantal_potjes_Monopoly(Npotjes)`. De variabele `Npotjes` geeft aan hoeveel potjes er 
