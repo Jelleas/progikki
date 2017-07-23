@@ -34,7 +34,13 @@ Tip: kijk eens naar de `random.choice()` functie!
 
 ### Tussenstap 2: Muteren
 
-Zodra een virus wordt geboren heeft deze een kans te muteren. Muteren is 
+Zodra een virus wordt geboren heeft deze een kans te muteren. 
+Muteren is het veranderen van één willekeurig basepaar voor een willekeurige ander.
+Bijvoorbeeld van AGTC naar ATTC.
+
+Schrijf een functie `mutate(virus)`.
+Deze functie accepteert één argument, virus, dat is een string van nucleotides.
+De functie moet een string returnen bestaande uit dezelfde nucleotides, waarvan er één is gemuteerd.
 
 
 ### Tussenstap 3: Reproductie
