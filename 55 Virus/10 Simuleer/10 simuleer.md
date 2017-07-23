@@ -26,7 +26,7 @@ Effectief laten we telkens het aanhangende nucleotide weg, dat maakt de represen
 
 Maak een nieuw bestand aan genaamd `virus.py` (hopelijk vind jouw virusscanner dit okee ;).
 Schrijf een functie `generateVirus(length)`. 
-Deze functie accepteert één argument, length, dat is een integer die de lengte van het virusgenoom representeerd.
+Deze functie accepteert één argument, `length`, dat is een integer die de lengte van het virusgenoom representeerd.
 De functie moet een string returnen bestaande uit een willekeurige sequentie van nucleotides.
 
 Tip: kijk eens naar de `random.choice()` functie!
@@ -39,7 +39,7 @@ Muteren is het veranderen van één willekeurig basepaar voor een willekeurige a
 Bijvoorbeeld van AGTC naar ATTC.
 
 Schrijf een functie `mutate(virus)`.
-Deze functie accepteert één argument, virus, dat is een string van nucleotides.
+Deze functie accepteert één argument, `virus`, dat is een string van nucleotides.
 De functie moet een string returnen bestaande uit dezelfde nucleotides, waarvan er één is gemuteerd.
 
 
