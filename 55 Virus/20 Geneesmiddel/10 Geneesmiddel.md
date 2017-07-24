@@ -57,7 +57,7 @@ Met de volgende parameters:
 * sterfte kans = 5%
 * mutatie kans = 10%
 
-Hoeveel van percent van de mensen is volledig genezen? We defineren volledig genezen als er geen virusdeeltjes aanwezig zijn in de laatste tijdstap.
+Hoeveel van percent van de patienten is volledig genezen? We defineren volledig genezen als er geen virusdeeltjes aanwezig zijn in de laatste tijdstap.
 
 Schrijf hiervoor een functie `experiment(numberOfPatients)`.
 Deze functie accepteert één argument, `numberOfPatients`, dit is het aantal patienten in het experiment.
