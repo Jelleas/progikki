@@ -42,6 +42,7 @@ Schrijf een functie `mutate(virus)`.
 Deze functie accepteert één argument, `virus`, dat is een string van nucleotides.
 De functie moet een string returnen bestaande uit dezelfde nucleotides, waarvan er één is gemuteerd.
 
+
 ### Tussenstap 3: Afsterven
 
 Virussen sterven uiteindelijk ook, dit gebeurt met een bepaalde kans per tijdstap in de simulatie.
@@ -51,6 +52,7 @@ Deze functie accepteert twee argumenten.
 `viruses` is een lijst van virusgenomen.
 `mortalityProb` is een float tussen 0 en 1 (inclusief) die de kans op het afsterven per virusdeeltje representeert.
 De functie moet een **nieuwe** lijst returnen met daarin de virusgenomen die het hebben overleefd. 
+
 
 ### Tussenstap 4: Reproductie
 
@@ -65,9 +67,26 @@ Deze functie accepteert drie argumenten.
 `mutationProb` is een float tussen 0 en 1 (inclusief) die de kans op mutatie bij reproductie representeert.
 De functìe moet de lijst van de totale populatie van virusgenomen returnen. Dat is dus inclusief de ouders!
 
+
 ### Tussenstap 5: Simuleren
 
+Nu we een representatie hebben voor virussen, en deze kunnen laten muteren, doen sterven, en laten reproduceren, kunnen we gaan simuleren.
+
+Schrijf een functie `simulate(viruses, mortalityProb, reproductionProb, mutationProb, timesteps = 500)`.
+Deze functie accepteert vier argumenten, en één optioneel argument.
+`viruses` is een lijst van virusgenomen.
+`mortalityProb` is een float tussen 0 en 1 (inclusief) die de kans op het afsterven per virusdeeltje representeert.
+`reproductionProb` is een float tussen 0 en 1 (inclusief) die de kans op reproductie per virusdeeltje representeert.
+`mutationProb` is een float tussen 0 en 1 (inclusief) die de kans op mutatie bij reproductie representeert.
+`timesteps` is een integer en een optioneel argument die het aantal tijdstappen in de simulatie aangeeft.
+De functie moet de een lijst returnen met daarin de populatiegrootte (een integer) op elke tijdstap.
+
+Let op, als timesteps = 500, dan moet `simulate()` een lijst van 501 lang returnen!
+
+
 ### Tussenstap 6: Geneesmiddel
+
+
 
 ### Tussenstap 7: Simuleren met een geneesmiddel
 
