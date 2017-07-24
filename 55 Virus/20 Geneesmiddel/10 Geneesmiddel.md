@@ -1,6 +1,6 @@
 # Geneesmiddel
 
-![](cure.jpg){:.inline}{: style="width:100%"}
+![](medicine.jpg){:.inline}{: style="width:100%"}
 
 In dit deel van de module gaan we een geneesmiddel introduceren dat de virussen bestrijdt.
 Maar virussen kunnen resistent zijn, en hun kinderen kunnen het worden.
@@ -13,7 +13,7 @@ In deze opdracht gaan we een geneesmiddel introduceren, en het effect op de viru
 
 
 ## Getting started
-Schrijf alle code voor deze opdracht in een file genaamd `cure.py`.
+Schrijf alle code voor deze opdracht in een file genaamd `medicine.py`.
 Je kan de code van de vorige opdracht importeren. Je hoeft geen code te copy pasten!
 
 
@@ -30,4 +30,4 @@ Een virus is enkel resistent als `AAA` achterelkaar voorkomt.
 
 ## Testen
 
-	checkpy cure
+	checkpy medicine
