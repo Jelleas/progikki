@@ -51,8 +51,8 @@ Met de volgende parameters:
 
 * timesteps = 500
 * genoomlengte = 16
-* start populatie grootte = 10
-* maximale populatie grootte = 1000
+* start virus populatie grootte = 10
+* maximale virus populatie grootte = 1000
 * maximale reproductie kans = 7%
 * sterfte kans = 5%
 * mutatie kans = 10%
