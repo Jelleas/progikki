@@ -42,6 +42,8 @@ Schrijf een functie `mutate(virus)`.
 Deze functie accepteert één argument, `virus`, dat is een string van nucleotides.
 De functie moet een string returnen bestaande uit dezelfde nucleotides, waarvan er één is gemuteerd.
 
+Tip: kijk eens naar de `random.randrange()` functie!
+
 
 ### Tussenstap 3: Afsterven
 
@@ -101,11 +103,11 @@ Test deze functie zorgvuldig! Maak eventueel een plot van de uitkomst, gebeurt e
 Let op, als timesteps = 500, dan moet `simulate()` een lijst van 501 lang returnen!
 
 
-### Tussenstap 6: Geneesmiddel
+### Tussenstap 7: Geneesmiddel
 
 
 
-### Tussenstap 7: Simuleren met een geneesmiddel
+### Tussenstap 8: Simuleren met een geneesmiddel
 
 ## Testen
 
