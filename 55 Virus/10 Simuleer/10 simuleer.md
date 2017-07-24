@@ -60,26 +60,43 @@ Een virus heeft een kans zich voort te planten op elke tijdstap in de simulatie.
 Als een virus zich voortplant dan heeft het kind exact dezelfde DNA string als de ouder.
 Behalve als het kind muteert, dan is er één basepaar anders.
 
-Schrijf voor reproductie een functie `reproduce(viruses, reproductionProb, mutationProb)`.
+Schrijf voor reproductie een functie `reproduce(viruses, mutationProb, reproductionProb)`.
 Deze functie accepteert drie argumenten. 
 `viruses` is een lijst van virusgenomen.
-`reproductionProb` is een float tussen 0 en 1 (inclusief) die de kans op reproductie per virusdeeltje representeert.
 `mutationProb` is een float tussen 0 en 1 (inclusief) die de kans op mutatie bij reproductie representeert.
+`reproductionProb` is een float tussen 0 en 1 (inclusief) die de kans op reproductie per virusdeeltje representeert.
 De functìe moet de lijst van de totale populatie van virusgenomen returnen. Dat is dus inclusief de ouders!
 
 
-### Tussenstap 5: Simuleren
+### Tussenstap 5: Populatie grootte
+
+Naarmate er meer virusdeeltjes aanwezig zijn, wordt de kans op reproductie kleiner.
+Er is simpelweg niet genoeg ruimte voor alle virusdeeltjes.
+Er is een negatief linear verband tussen het aantal virussen en de reproductie kans.
+De kans op reproductie is gelijk aan `(1 - (grootte_van_virus_populatie / maximaal_aantal_virussen)) * maximale_reproductie_kans`.
+
+Schrijf een functie `reproductionProbability(viruses, maxPopulation, maxReproductionProb)`.
+Deze functie accepteert drie argumenten:
+`viruses` is een lijst van virusgenomen.
+`maxPopulation` is een integer voor de maximale populatiegrootte.
+`maxReproductionProb` is een float tussen 0 en 1 (inclusief) die de maximale kans op reproductie per virusdeeltje representeert.
+De functie moet een float returnen tussen 0 en 1 die de kans op reproductie representeert.
+
+### Tussenstap 6: Simuleren
 
 Nu we een representatie hebben voor virussen, en deze kunnen laten muteren, doen sterven, en laten reproduceren, kunnen we gaan simuleren.
 
-Schrijf een functie `simulate(viruses, mortalityProb, reproductionProb, mutationProb, timesteps = 500)`.
-Deze functie accepteert vier argumenten, en één optioneel argument.
+Schrijf een functie `simulate(viruses, mortalityProb, mutationProb, maxReproductionProb, maxPopulation, timesteps = 500)`.
+Deze functie accepteert vijf argumenten, en één optioneel argument.
 `viruses` is een lijst van virusgenomen.
 `mortalityProb` is een float tussen 0 en 1 (inclusief) die de kans op het afsterven per virusdeeltje representeert.
 `reproductionProb` is een float tussen 0 en 1 (inclusief) die de kans op reproductie per virusdeeltje representeert.
+`maxPopulation` is een integer voor de maximale populatiegrootte.
 `mutationProb` is een float tussen 0 en 1 (inclusief) die de kans op mutatie bij reproductie representeert.
 `timesteps` is een integer en een optioneel argument die het aantal tijdstappen in de simulatie aangeeft.
 De functie moet de een lijst returnen met daarin de populatiegrootte (een integer) op elke tijdstap.
+
+Test deze functie zorgvuldig! Maak eventueel een plot van de uitkomst, gebeurt er wat je verwacht?
 
 Let op, als timesteps = 500, dan moet `simulate()` een lijst van 501 lang returnen!
 
