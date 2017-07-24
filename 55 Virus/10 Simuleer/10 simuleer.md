@@ -84,6 +84,7 @@ Deze functie accepteert drie argumenten:
 `maxReproductionProb` is een float tussen 0 en 1 (inclusief) die de maximale kans op reproductie per virusdeeltje representeert.
 De functie moet een float returnen tussen 0 en 1 die de kans op reproductie representeert.
 
+
 ### Tussenstap 6: Simuleren
 
 Nu we een representatie hebben voor virussen, en deze kunnen laten muteren, doen sterven, en laten reproduceren, kunnen we gaan simuleren.
