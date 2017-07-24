@@ -31,6 +31,7 @@ Tip: kijk eens naar de functie `string.find()`!
 ### Tussenstap 2: Simuleren met een geneesmiddel
 Nu kunnen we het effect gaan bestuderen van de introductie van een geneesmiddel.
 We dienen het geneesmiddel toe zodra de diagnose is gesteld, bij de 100ste tijdstap.
+Laat per tijdstap eerst virussen afsterven, daarna bereken je pas de reproductie kans en laat je ze reproduceren.
 
 Schrijf een functie genaamd `simulateWithMedicine(viruses, mortalityProb, mutationProb, maxReproductionProb, maxPopulation, timesteps = 500)`.
 Deze functie accepteert vijf argumenten, en één optioneel argument:

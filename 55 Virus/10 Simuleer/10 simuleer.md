@@ -24,7 +24,7 @@ Zie bijvoorbeeld de volgende string:
 Dit is een DNA string met alle vier base paren, eerst het paar AT, dan GC, dan TA, en als laatste CG.
 Effectief laten we telkens het aanhangende nucleotide weg, dat maakt de representatie wat simpeler!
 
-Maak een nieuw bestand aan genaamd `virus.py` (hopelijk vind jouw virusscanner dit okee ;).
+Maak een nieuw bestand aan genaamd `infection.py` (hopelijk vind jouw virusscanner dit okee ;).
 Schrijf een functie `generateVirus(length)`. 
 Deze functie accepteert één argument, `length`, dat is een integer die de lengte van het virusgenoom representeerd.
 De functie moet een string returnen bestaande uit een willekeurige sequentie van nucleotides.
@@ -94,6 +94,7 @@ De functie moet een float returnen tussen 0 en 1 die de kans op reproductie repr
 ### Tussenstap 6: Simuleren
 
 Nu we een representatie hebben voor virussen, en deze kunnen laten muteren, doen sterven, en laten reproduceren, kunnen we gaan simuleren.
+Laat per tijdstap eerst virussen afsterven, daarna bereken je pas de reproductie kans en laat je ze reproduceren.
 
 Schrijf een functie `simulate(viruses, mortalityProb, mutationProb, maxReproductionProb, maxPopulation, timesteps = 500)`.
 Deze functie accepteert vijf argumenten, en één optioneel argument:
@@ -114,4 +115,4 @@ Let op, als `timesteps = 500`, dan moet `simulate()` een lijst van 501 lang retu
 
 ## Testen
 
-	checkpy virus
+	checkpy infection
