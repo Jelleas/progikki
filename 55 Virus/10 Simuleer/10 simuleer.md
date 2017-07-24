@@ -100,7 +100,7 @@ De functie moet de een lijst returnen met daarin de populatiegrootte (een intege
 
 Test deze functie zorgvuldig! Maak eventueel een plot van de uitkomst, gebeurt er wat je verwacht?
 
-Let op, als timesteps = 500, dan moet `simulate()` een lijst van 501 lang returnen!
+Let op, als `timesteps = 500`, dan moet `simulate()` een lijst van 501 lang returnen!
 
 
 ### Tussenstap 7: Geneesmiddel
