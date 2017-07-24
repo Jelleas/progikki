@@ -49,7 +49,7 @@ Test ook deze functie goed! Maak eventueel een plot, gebeurt er wat je verwacht?
 ### Tussenstap 3: Genezing?
 Met de volgende parameters:
 
-* timesteps = 500
+* tijdstappen = 500
 * genoomlengte = 16
 * start virus populatie grootte = 10
 * maximale virus populatie grootte = 1000
