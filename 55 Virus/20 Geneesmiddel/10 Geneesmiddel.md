@@ -11,6 +11,7 @@ In deze opdracht gaan we een geneesmiddel introduceren, en het effect op de viru
 
 
 ## Getting started
+Schrijf alle code voor deze opdracht in een file genaamd `cure.py`.
 Je kan de code van de vorige opdracht importeren. Je hoeft geen code te copy pasten!
 
 
@@ -27,4 +28,4 @@ Een virus is enkel resistent als `AAA` achterelkaar voorkomt.
 
 ## Testen
 
-	checkpy virus
+	checkpy cure
