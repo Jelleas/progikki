@@ -1,6 +1,6 @@
 # Geneesmiddel
 
-![](medicine.jpg){:.inline}{: style="width:100%"}
+![](medicine.png){:.inline}{: style="width:100%"}
 
 In dit deel van de module gaan we een geneesmiddel introduceren dat de virussen bestrijdt.
 Maar virussen kunnen resistent zijn, en hun kinderen kunnen het worden.
