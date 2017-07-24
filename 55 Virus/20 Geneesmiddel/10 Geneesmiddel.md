@@ -21,7 +21,7 @@ Je kan de code van de vorige opdracht importeren. Je hoeft geen code te copy pas
 Allereerst gaan we kijken of een virusgenoom resistent is.
 
 Schrijf een functie `isResistent(virus)`.
-Deze functie accepteert één argument: `virus` is een virusgenoom.
+Deze functie accepteert één argument, `virus`, dit is een virusgenoom.
 De functie moet een boolean returnen welke aangeeft of het virus resistent is (True) of niet (False).
 Een virus is enkel resistent als `AAA` achterelkaar voorkomt.
 
