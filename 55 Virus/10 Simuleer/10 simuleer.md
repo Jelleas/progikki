@@ -5,10 +5,10 @@
 Voor o.a. de farmaceutische industrie is het belangrijk om de succeskans van een geneesmiddel te bepalen.
 Dit is lastig analytisch te doen, maar we kunnen het wel modelleren. 
 
-## Opdracht
+## Opdracht 1
 
 In deze opdracht ga je virusdeeltjes simuleren, welke kunnen reproduceren en sterven. 
-Daarna gaan we een geneesmiddel introduceren, en het effect op de viruspopulatie bestuderen.
+In de volgende opdracht gaan we een geneesmiddel introduceren, en het effect op de viruspopulatie bestuderen.
 
 
 ### Tussenstap 1: Virusgenoom
@@ -101,14 +101,3 @@ De functie moet de een lijst returnen met daarin de populatiegrootte (een intege
 Test deze functie zorgvuldig! Maak eventueel een plot van de uitkomst, gebeurt er wat je verwacht?
 
 Let op, als `timesteps = 500`, dan moet `simulate()` een lijst van 501 lang returnen!
-
-
-### Tussenstap 7: Geneesmiddel
-
-
-
-### Tussenstap 8: Simuleren met een geneesmiddel
-
-## Testen
-
-	checkpy virus
