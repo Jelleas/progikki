@@ -50,9 +50,11 @@ Tip: kijk eens naar de `random.randrange()` functie!
 Virussen sterven uiteindelijk ook, dit gebeurt met een bepaalde kans per tijdstap in de simulatie.
 
 Schrijf een functie `kill(viruses, mortalityProb)`.
-Deze functie accepteert twee argumenten.
-`viruses` is een lijst van virusgenomen.
-`mortalityProb` is een float tussen 0 en 1 (inclusief) die de kans op het afsterven per virusdeeltje representeert.
+Deze functie accepteert twee argumenten:
+
+* `viruses` is een lijst van virusgenomen.
+* `mortalityProb` is een float tussen 0 en 1 (inclusief) die de kans op het afsterven per virusdeeltje representeert.
+
 De functie moet een **nieuwe** lijst returnen met daarin de virusgenomen die het hebben overleefd. 
 
 
@@ -63,10 +65,12 @@ Als een virus zich voortplant dan heeft het kind exact dezelfde DNA string als d
 Behalve als het kind muteert, dan is er één basepaar anders.
 
 Schrijf voor reproductie een functie `reproduce(viruses, mutationProb, reproductionProb)`.
-Deze functie accepteert drie argumenten. 
-`viruses` is een lijst van virusgenomen.
-`mutationProb` is een float tussen 0 en 1 (inclusief) die de kans op mutatie bij reproductie representeert.
-`reproductionProb` is een float tussen 0 en 1 (inclusief) die de kans op reproductie per virusdeeltje representeert.
+Deze functie accepteert drie argumenten:
+
+* `viruses` is een lijst van virusgenomen.
+* `mutationProb` is een float tussen 0 en 1 (inclusief) die de kans op mutatie bij reproductie representeert.
+* `reproductionProb` is een float tussen 0 en 1 (inclusief) die de kans op reproductie per virusdeeltje representeert.
+
 De functìe moet de lijst van de totale populatie van virusgenomen returnen. Dat is dus inclusief de ouders!
 
 
@@ -77,11 +81,13 @@ Er is simpelweg niet genoeg ruimte voor alle virusdeeltjes.
 Er is een negatief linear verband tussen het aantal virussen en de reproductie kans.
 De kans op reproductie is gelijk aan `(1 - (grootte_van_virus_populatie / maximaal_aantal_virussen)) * maximale_reproductie_kans`.
 
-Schrijf een functie `reproductionProbability(viruses, maxPopulation, maxReproductionProb)`.
+Schrijf een functie `reproductionProbability(viruses, maxReproductionProb, maxPopulation)`.
 Deze functie accepteert drie argumenten:
-`viruses` is een lijst van virusgenomen.
-`maxPopulation` is een integer voor de maximale populatiegrootte.
-`maxReproductionProb` is een float tussen 0 en 1 (inclusief) die de maximale kans op reproductie per virusdeeltje representeert.
+
+* `viruses` is een lijst van virusgenomen.
+* `maxPopulation` is een integer voor de maximale populatiegrootte.
+* `maxReproductionProb` is een float tussen 0 en 1 (inclusief) die de maximale kans op reproductie per virusdeeltje representeert.
+
 De functie moet een float returnen tussen 0 en 1 die de kans op reproductie representeert.
 
 
@@ -90,13 +96,15 @@ De functie moet een float returnen tussen 0 en 1 die de kans op reproductie repr
 Nu we een representatie hebben voor virussen, en deze kunnen laten muteren, doen sterven, en laten reproduceren, kunnen we gaan simuleren.
 
 Schrijf een functie `simulate(viruses, mortalityProb, mutationProb, maxReproductionProb, maxPopulation, timesteps = 500)`.
-Deze functie accepteert vijf argumenten, en één optioneel argument.
-`viruses` is een lijst van virusgenomen.
-`mortalityProb` is een float tussen 0 en 1 (inclusief) die de kans op het afsterven per virusdeeltje representeert.
-`reproductionProb` is een float tussen 0 en 1 (inclusief) die de kans op reproductie per virusdeeltje representeert.
-`maxPopulation` is een integer voor de maximale populatiegrootte.
-`mutationProb` is een float tussen 0 en 1 (inclusief) die de kans op mutatie bij reproductie representeert.
-`timesteps` is een integer en een optioneel argument die het aantal tijdstappen in de simulatie aangeeft.
+Deze functie accepteert vijf argumenten, en één optioneel argument:
+
+* `viruses` is een lijst van virusgenomen.
+* `mortalityProb` is een float tussen 0 en 1 (inclusief) die de kans op het afsterven per virusdeeltje representeert.
+* `reproductionProb` is een float tussen 0 en 1 (inclusief) die de kans op reproductie per virusdeeltje representeert.
+* `maxPopulation` is een integer voor de maximale populatiegrootte.
+* `mutationProb` is een float tussen 0 en 1 (inclusief) die de kans op mutatie bij reproductie representeert.
+* `timesteps` is een integer en een optioneel argument die het aantal tijdstappen in de simulatie aangeeft.
+
 De functie moet de een lijst returnen met daarin de populatiegrootte (een integer) op elke tijdstap.
 
 Test deze functie zorgvuldig! Maak eventueel een plot van de uitkomst, gebeurt er wat je verwacht?
